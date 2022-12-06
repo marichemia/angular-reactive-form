@@ -1,0 +1,112 @@
+* {
+    font-family: monospace;
+    font-size: large;
+    font-weight: 500;
+    color: rgb(54, 54, 54);
+}
+
+form {
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: aliceblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+    padding: 20px 30px 20px 30px;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid rgb(21, 22, 20);
+}
+
+.name input {
+    width: 100px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.name label {
+    margin-left: 20px;
+    font-family: monospace;
+    font-size: large;
+    font-weight: 500;
+    color: rgb(54, 54, 54);
+
+}
+
+.required {
+    color: red;
+}
+
+.contact {
+    position: relative;
+    top: -20px;
+    margin-left: 20px;
+}
+
+.contact h2,
+.experience h2 {
+    font-size: 22px;
+}
+
+.contact input,
+.contact label {
+    margin-bottom: 20px;
+}
+
+.email {
+    position: relative;
+    left: 82px;
+}
+
+.phone {
+    position: relative;
+    left: 20px;
+}
+
+.experience {
+    position: relative;
+    left: 20px;
+    top: -20px;
+}
+
+.github {
+    position: relative;
+    left: 73px;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 30px;
+    background-color: beige;
+}
+
+button:disabled {
+    background-color: lightgrey;
+}
+
+.error-txt {
+    color: red;
+}
+
+.remove-btn {
+    margin-left: 20px;
+}
+
+button:hover {
+    background-color: antiquewhite;
+}
+
+button:disabled:hover {
+    background-color: lightgrey;
+}

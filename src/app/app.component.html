@@ -1,0 +1,40 @@
+<form [formGroup]="userInfo" (ngSubmit)="onSubmit()">
+    <div class="name">
+        <label for="firstName">First Name:<span class="required">*</span></label>
+        <input type="text" formControlName="firstName" id=" firstName">
+        <label for="lastName">Last Name:<span class="required">*</span></label>
+        <input type="text" formControlName="lastName" id="lastName">
+        <br>
+    </div>
+    <div class="contact">
+        <h2>Contact Information</h2>
+        <label for="phoneNumber">Phone Number:<span class="required">*</span></label>
+        <input type="text" formControlName="phoneNumber" id="phoneNumber" class="phone">
+        <br>
+        <label for="email">Email:<span class="required">*</span></label>
+        <input type="text" formControlName="email" id="email" class="email">
+        <br>
+    </div>
+    <div class="experience">
+        <label for="github">GitHub:<span class="required">*</span></label>
+        <input type="text" formControlName="github" id="github" class="github">
+        <br>
+        <div formArrayName='workExperience'>
+            <h2>Work Experience</h2>
+            <p>Please describe your previous work experience and roles in the company:</p>
+            <button type="button" (click)="addWorkExperience()">
+                + Add Another Field
+            </button>
+
+            <div *ngFor="let experience of workExperience.controls; let i = index">
+                <br>
+                <input type="text" id="experience-{{i}}" [formControlName]="i">
+                <button type="button" (click)="removeWorkExperience(i)" class="remove-btn"> remove </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="userInfo.invalid" class="error-txt">Please fill out all required fields</div>
+    <button type="submit" [disabled]="!userInfo.valid">Submit</button>
+</form>
